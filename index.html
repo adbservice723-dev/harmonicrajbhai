@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -339,6 +338,7 @@ h1 span {
     <!-- TELEGRAM BUTTON -->
     <a href="https://t.me/+Bv3XcUjlEN8zZTI1"
        class="telegram-btn"
+       rel="noopener noreferrer"
        onclick="trackSubscribe(event)">
 
         <svg viewBox="0 0 24 24">
@@ -376,7 +376,7 @@ h1 span {
 
     <!-- DISCLAIMER -->
     <div class="disclaimer">
-        <strong>⚠ IMPORTANT DISCLAIMER</strong><br>
+        <strong>⚠ IMPORTANT DISCLAIMER</strong>
 
         This community is intended for educational and
         informational purposes only. We do not provide
@@ -388,8 +388,8 @@ h1 span {
 
     <!-- FOOTER -->
     <div class="footer">
-        © 2026 GAUTAM KUMAR JHA. All Rights Reserved.<br>
-        Official Stock Learners Community<br>
+        © 2026 GAUTAM KUMAR JHA. All Rights Reserved.
+        Official Stock Learners Community
         Educational Content • Market Risks Apply
 
         <div class="agency-credit">
@@ -406,33 +406,42 @@ h1 span {
 
 <!-- META SUBSCRIBE TRACKING -->
 <script>
-function trackSubscribe(event) {
+/*
+  Browser-side conversion tracking:
+  - PageView is recorded by the Meta Pixel above.
+  - Subscribe fires only after a visitor clicks the Telegram button.
+  - A page-level lock prevents repeat clicks from inflating conversions.
+*/
+let subscribeClickLocked = false;
 
+function trackSubscribe(event) {
     event.preventDefault();
 
     const telegramURL = event.currentTarget.href;
-    let redirected = false;
 
-    function redirectToTelegram() {
-        if (redirected) return;
-        redirected = true;
-        window.location.href = telegramURL;
-    }
+    // Prevent duplicate Subscribe events and repeated redirects on this page.
+    if (subscribeClickLocked) return;
+    subscribeClickLocked = true;
 
-    if (typeof fbq === 'function') {
+    if (typeof window.fbq === 'function') {
+        const eventID = 'subscribe_' + Date.now() + '_' +
+            Math.random().toString(36).slice(2, 10);
 
-        fbq('track', 'Subscribe', {
+        window.fbq('track', 'Subscribe', {
             value: 1.00,
             currency: 'INR'
+        }, {
+            eventID: eventID
         });
 
-        setTimeout(redirectToTelegram, 300);
-
+        // Give the Meta Pixel request a brief chance to enter its queue.
+        window.setTimeout(function () {
+            window.location.assign(telegramURL);
+        }, 500);
     } else {
-        redirectToTelegram();
+        // Never block the visitor from reaching Telegram if Pixel is unavailable.
+        window.location.assign(telegramURL);
     }
-
-    setTimeout(redirectToTelegram, 1500);
 }
 </script>
 
