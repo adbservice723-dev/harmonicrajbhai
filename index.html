@@ -1,103 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TAMIL HARMONIC TRADER RAJ</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg, #050a30 0%, #000c66 50%, #7ec8e3 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRADE WITH HARMONIC Learning Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .card {
-            background-color: #111827;
-            width: 90%;
-            max-width: 400px;
-            padding: 40px 20px;
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
-        .logo-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: #fff;
-            padding: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+  .card {
+    width: 85%;
+    max-width: 340px; 
+    background: #010a0f;
+    border: 1.5px solid #00d2ff;
+    border-radius: 35px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+  }
 
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
+  .profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #00d2ff;
+    object-fit: cover;
+    margin-top: -5px;
+    box-shadow: 0 0 15px #00d2ff;
+  }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
+  h1 {
+    color: #fff;
+    font-size: 20px;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-        .info-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 30px;
-            font-size: 16px;
-            line-height: 2;
-        }
+  .features {
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+  }
 
-        .disclaimer {
-            font-size: 12px;
-            color: #9ca3af;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            padding: 12px;
-            border: 1px solid #374151;
-            border-radius: 12px;
-            text-align: left;
-        }
+  .feature-item {
+    color: #ccc;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+  }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(90deg, #7cf0e5, #49dcb1);
-            color: #000;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 40px;
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 25px;
-            gap: 10px;
-        }
+  .feature-item:last-child { border-bottom: none; }
 
-        .footer-text {
-            font-size: 13px;
-            color: #9ca3af;
-        }
+  .icon { margin-right: 12px; font-size: 16px; }
 
-        .footer-text a {
-            color: #49dcb1;
-            text-decoration: none;
-        }
-    </style>
-  <!-- Meta Pixel Code -->
+  .join-text {
+    color: #eee;
+    font-size: 12px;
+    margin: 20px 0 12px;
+    font-weight: 300;
+  }
+
+  .telegram-btn {
+    display: block;
+    background: linear-gradient(90deg, #00d2ff 0%, #9247ff 100%);
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.3);
+  }
+
+  .hindi-quote {
+    color: #bbb;
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .footer-box {
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 11px;
+    color: #888;
+  }
+
+  /* Link styling for Agency */
+  .footer-box a { 
+    color: #00d2ff; 
+    font-weight: bold; 
+    text-decoration: none;
+  }
+
+  .disclaimer {
+    font-size: 9px;
+    color: #444;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="https://i.ibb.co/GQPLMcJx/download.jpg" alt="TRADE WITH HARMONIC" class="profile-img">
+
+  <h1>𝗛𝗮𝗿𝗺𝗼𝗻𝗶𝗰 𝗧𝗿𝗮𝗱𝗲𝗿 𝗥𝗮𝗷</h1>
+
+  <div class="features">
+    <div class="feature-item"><span class="icon">🌐</span> Learning & Educational Sessions</div>
+    <div class="feature-item"><span class="icon">📊</span> Market Concepts & Awareness</div>
+    <div class="feature-item"><span class="icon">💎</span> Chart Reading Concepts</div>
+    <div class="feature-item"><span class="icon">💻</span> Educational Case Discussions</div>
+  </div>
+
+  <p class="join-text">Join our learning community and grow your knowledge</p>
+
+ <a href="https://t.me/+Bv3XcUjlEN8zZTI1" class="telegram-btn">
+  JOIN FREE TELEGRAM
+</a>
+  <p class="hindi-quote">మంచి ఉద్దేశం, నిజమైన కష్టం ఉంటే విజయం తప్పకుండా లభిస్తుంది.।</p>
+
+  <div class="footer-box">
+    This Channel Advertise By <a href="https://t.me/+KMkMkqIAJvliMzM1" target="_blank">AdNexProAgency</a>
+  </div>
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -113,41 +156,7 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1699449095086051&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->  
-</head>
-<body>
-
-<div class="card">
-    <div class="logo-container">
-        <img src="https://i.ibb.co/GQPLMcJx/download.jpg" alt="Logo">
-    </div>
-
-    <h1>𝗧𝗮𝗺𝗶𝗹 𝗛𝗮𝗿𝗺𝗼𝗻𝗶𝗰 𝗧𝗿𝗮𝗱𝗲𝗿 𝗥𝗮𝗷</h1>
-
-    <div class="info-list">
-        <div>📊 NIFTY · BANKNIFTY · SENSEX</div>
-        <div>📚 Daily Market Commentary</div>
-        <div>🎓 Educational Content Only</div>
-        <div>🕰️ 6+ Years in Markets</div>
-    </div>
-
-    <a href="https://t.me/+Bv3XcUjlEN8zZTI1" class="btn">
-               <img src="https://i.ibb.co/GQPLMcJx/download.jpg" width="25" alt="TG Logo">
-        Join Telegram
-    </a>
-
-    <div class="disclaimer">
-        For educational and informational purposes only. Not investment advice.
-        Trading in securities involves risk, and past performance does not
-        guarantee future results. We are not a SEBI-registered investment
-        adviser — please consult a registered adviser and do your own
-        research before making any trading decisions.
-    </div>
-
-    <div class="footer-text">
-        Advertised by <a href="https://t.me/+KMkMkqIAJvliMzM1">AdNexProAgency</a>
-    </div>
-</div>
+<!-- End Meta Pixel Code -->
 
 </body>
 </html>
